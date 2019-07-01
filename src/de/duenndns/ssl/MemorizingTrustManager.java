@@ -666,7 +666,9 @@ public class MemorizingTrustManager implements X509TrustManager {
 				// invalid / expired activity, the catch-all fallback is
 				// deployed.
 				try {
-					foregroundAct.startActivity(ni);
+//					getUI().startActivity(ni);
+//
+					MemorizingTrustManager.interactResult(myId, MTMDecision.DECISION_ONCE);
 				} catch (Exception e) {
 					LOGGER.log(Level.FINE, "startActivity(MemorizingActivity)", e);
 					startActivityNotification(ni, myId, message);
